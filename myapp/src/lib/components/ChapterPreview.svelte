@@ -40,15 +40,17 @@
     <h2 class="mb-l">What you are getting</h2>
     <div class="chapter-container">
         <ul>
-            <li>
-            <button 
-                class="chapter-title selected-chapter-title"
-                aria-controls="chapter-info-1"
-                aria-expanded="true"
-            >
-                <h3>Chapter 1: Navigating the Spanish bureaucracy</h3>
-            </button>
-            </li>
+            {#each chapters as chapter}
+                <li>
+                    <button
+                        class="chapter-title selected-chapter-title"
+                        aria-controls={`chapter-info-${chapter.number}`}
+                        aria-expanded="true"
+                    >
+                        <h3>Chapter {chapter.number}: {chapter.title}</h3>
+                    </button>
+                </li>
+            {/each}
         </ul>
         <div class="chapter-info">
             <h3 class="chapter-strapline italic mb-s">

@@ -1,13 +1,54 @@
 <script>
     import chevronDown from "$assets/chevron-down.svg";
+
+    let { faq, isExpanded } = $props();
 </script>
 
-<button class="contianer">
+<button class="container" class:container-expanded={isExpanded}>
     <div class="question-and-answer">
-        <p class="question mb-s">What will I learn?</p>
-        <p class="answer">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <p class="question mb-s">{faq.question}</p>
+        <p class="answer">{faq.answer}</p>
     </div>
     <img src={chevronDown} alt="">
 </button>
+
+<style>
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 12px 0;
+        border-bottom: 1px solid grey;
+        text-align: left;
+    }
+
+    .question-and-answer {
+        padding-right: 150px;
+        flex-grow:  1;
+    }
+    .answer {
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 0.3s ease-out,
+        opacity 0.3s ease-out;
+    }
+
+    button img {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s linear
+    }
+
+    .question {
+        font-weight: 600;
+    }
+
+    .container-expanded img {
+        transform: rotate(180deg);
+    }
+
+    .container-expanded answer {
+        max-height: unset;
+        opacity: 1;
+    }
+</style>

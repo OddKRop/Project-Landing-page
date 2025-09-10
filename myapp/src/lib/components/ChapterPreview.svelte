@@ -44,7 +44,7 @@
 
 </script>
 
-<section class="chapter-preview default margin">
+<section class="landing-page-section">
     <h2 class="mb-l">What you are getting</h2>
     <div class="chapter-container">
         <ul>

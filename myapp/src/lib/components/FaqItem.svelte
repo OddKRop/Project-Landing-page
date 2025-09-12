@@ -1,15 +1,17 @@
 <script>
     import chevronDown from "$assets/chevron-down.svg";
 
-    let { faq, isExpanded } = $props();
+    let { faq, isExpanded, ...props } = $props();
 </script>
 
-<button class="container" class:container-expanded={isExpanded}>
+<button class="container" class:container-expanded={isExpanded} {...props}>
     <div class="question-and-answer">
         <p class="question mb-s">{faq.question}</p>
-        <p class="answer">{faq.answer}</p>
+        <p class="answer">
+            {faq.answer}
+        </p>
     </div>
-    <img src={chevronDown} alt="">
+    <img src={chevronDown} alt="" />
 </button>
 
 <style>
@@ -29,8 +31,9 @@
     .answer {
         max-height: 0;
         opacity: 0;
-        transition: max-height 0.3s ease-out,
-        opacity 0.3s ease-out;
+        transition: 
+            max-height 0.3s ease-out,
+            opacity 0.3s ease-out;
     }
 
     button img {
@@ -47,7 +50,7 @@
         transform: rotate(180deg);
     }
 
-    .container-expanded answer {
+    .container-expanded .answer {
         max-height: unset;
         opacity: 1;
     }

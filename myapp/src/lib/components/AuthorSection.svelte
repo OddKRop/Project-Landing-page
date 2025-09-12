@@ -31,7 +31,6 @@
 
 <style>
 
-
     .author-container {
         display: flex;
         justify-content: space-between;

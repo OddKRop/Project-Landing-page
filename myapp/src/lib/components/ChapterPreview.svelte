@@ -75,12 +75,6 @@
 </section>
 
 <style>
-    .chapter-preview {
-        padding: 80px 0;
-        margin-left: 12vw;
-        margin-right: 20vw;
-        max-width: 1150px;
-    }
 
     .chapter-container {
         display: flex;

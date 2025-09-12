@@ -43,7 +43,7 @@
     </div>
     <div class="additional-info mt-m">
         <Button class="mt-s">BUY NOW</Button>
-        <p class="mt-m">Any other questions?<p>
+        <p class="mt-m">Any other questions?</p>
         <p>
             Hit me up on twitter <img src={twitterIcon} class="twitter-icon" alt="" />
         </p>
